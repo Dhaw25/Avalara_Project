@@ -1,0 +1,24 @@
+namespace: ns
+
+nginx:
+  host: "ngnix-domain.com"
+  ingressName: "ngnix"
+  primaryServiceName: "primary-service"
+  canaryServiceName: "canary-service"
+  primaryreplicaSet: 3
+  canaryreplicaSet: 3
+  primaryApp: "primary"
+  canaryApp: "canary"
+  primaryDeployment: "primary-deployment"
+  canaryDeployment: "canary-deployment"
+  imageName: "argoproj/rollouts-demo"
+
+# Redis values
+redis:
+  host: "redis-domain.com"
+  ingressName: "redis-ngnix"
+  serviceName: "redis-service"
+  deployment: "redis-deployment"
+  replicaSet: 1
+  appName: "redis"
+  persistentVolumeName: "redis-persistent-volume"

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: Avalara_Project_Helm_chart
+description: A Helm chart for deploying NGINX and Redis
+version: 0.1.0

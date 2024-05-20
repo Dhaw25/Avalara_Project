@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.ngnix.primaryServiceName }}
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: {{ .Values.ngnix.primaryApp }}
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.ngnix.canaryServiceName }}
+  namespace: {{ .Values.ngnix.namespace }}
+spec:
+  selector:
+    app: {{ .Values.ngnix.canaryApp }}
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
